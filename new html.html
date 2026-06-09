@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Website</title>
+
+<style>
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 200px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    animation: blink 1s infinite;
+}
+
+.whatsapp-float img {
+    width: 200%;
+    height: 200%;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    line-height:1.6;
+}
+
+header{
+    background:maroon;
+    color:white;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+}
+
+.nav-links li{
+    margin-left:20px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.hero{
+    height:70vh;
+    position:relative;
+    overflow:hidden;
+}
+
+.slide{
+    display:none;
+    width:100%;
+    height:70vh;
+    object-fit:cover;
+}
+
+.active{
+    display:block;
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    text-align:center;
+    background:rgba(0,0,0,0.5);
+    padding:20px;
+    border-radius:10px;
+}
+
+section{
+    padding:50px 20px;
+}
+
+.section-title{
+    text-align:center;
+    color:#004080;
+    margin-bottom:20px;
+	
+}
+
+.about,
+.admissions,
+.academics,
+.news,
+.contact{
+    max-width:1000px;
+    margin:auto;
+
+
+	
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:maroon;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:10px;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact-form button{
+    background:maroon;
+    background:maroon;
+    color:white;
+    border:none;
+    padding:12px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+footer{
+    background:maroon;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+.nav-links{
+    display:none;
+    flex-direction:column;
+    background:#004080;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+}
+
+.nav-links.show{
+    display:flex;
+}
+
+.nav-links li{
+    margin:15px 0;
+    text-align:center;
+}
+
+.menu-btn{
+    display:block;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="navbar">
+<div class="logo">Welcome to ST James primary ,junior school and senior</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#admissions">Admissions</a></li>
+<li><a href="#academics">Academics</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
+</header>
+
+<section class="hero" id="home">
+<img class="slide active" src="ttt.jpeg" alt="Italian Trulli">
+
+
+<div class="hero-text">
+<h1>Welcome to ST James school</h1>
+<p>Displine and deligence for successful</p>
+</div>
+</section>
+
+<section id="about">
+<h2 class="section-title">About Us</h2>
+<div class="about">
+<p >
+St James school is located in Juja farm-Kalimoni . The school offers education right from grade grade 1 to grade 12 in senior school.The school contains all facilities nessesary for learning including labs , field etc .Our school is committed to providing quality education,
+developing leadership skills, and nurturing talents.
+We strive to create responsible and successful learners.
+</p>
+</div>
+</section>
+
+<section id="admissions">
+<h2 class="section-title">Admissions</h2>
+<div class="cards">
+<div class="card">
+<h3>Requirements</h3>
+<p>Birth Certificate, Previous Report Forms, Passport Photo.Admission takes place through out the year</p>
+</div>
+
+<div class="card">
+<h3>Application</h3>
+<p>Visit the school office or submit an online application.</p>
+</div>
+
+<div class="card">
+<h3>Interviews</h3>
+<p>Interviews and assessments conducted before admission.</p>
+</div>
+</div>
+</section>
+
+<section id="academics">
+<h2 class="section-title">Academic Programs</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Primary School</h3>
+<p>Primary section run from grade 1 to grade 6 and we offer Competency-based curriculum with strong foundations.</p>
+</div>
+
+<div class="card">
+<h3>Junior School</h3>
+<p>The school has a well structuerd junior school atarting from grade 6 to grade 9 . The school is registerd with KNEC and national exam are done every year .The school offers advanced learning and skill development programs.</p>
+</div>
+
+<div class="card">
+<h3>Senior School</h3>
+<p>We are proudly have sennior school section in the school starting from grade 10 to 12 we offers all pathways(stem) and have the nessecary equipments to support them .Students are well prepaired for Career pathways and university preparation.</p>
+</div>
+
+</div>
+</section>
+
+<section id="news">
+<h2 class="section-title">News & Announcements</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Sports Day</h3>
+<p>Second term sports are sheduled to start this mounth.They include both footbal and music .</p>
+</div>
+
+<div class="card">
+<h3>Exam </h3>
+<p>The school will work on two exams , the mid-term exam and end term exam </p>
+</div>
+
+<div class="card">
+<h3>School Trip</h3>
+<p>Educational trip registration is ongoing.</p>
+</div>
+
+</div>
+</section>
+
+<section id="gallery">
+<h2 class="section-title">Gallery</h2>
+
+<div class="gallery">
+<img src="w.jpeg"">
+<img src="123.jpeg">
+<img src="567.jpeg">
+<img src="wha.jpeg">
+
+</div>
+<a href="https://wa.me/254748797303"
+   class="whatsapp-float"
+   target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp">
+</a>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact">
+
+<form class="contact-form"
+      action="https://formsubmit.co/laseousmbaka@gmail.com"
+      method="POST">
+
+    <input type="text"
+           name="name"
+           placeholder="Your Name"
+           required>
+
+    <input type="email"
+           name="email"
+           placeholder="Your Email"
+           required>
+
+    <textarea name="message"
+              rows="5"
+              placeholder="Your Message"
+              required></textarea>
+
+    <button type="submit">Send Message</button>
+
+</form>
+
+<br>
+
+<p><strong>Phone 1:</strong> +254 734 817 439 </p>
+<p><strong>Phone 2:</strong> +254 113 591 828 </p>
+<p><strong>Emai l:</strong> Stjamesprimary.op@gmail.com</p>
+<p><strong>Email 2:</strong> Stjamesseniorschool.op@gmail.com</p>
+<p><strong>Address:</strong> Nairobi, Kenya</p>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 My School. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+let slides=document.querySelectorAll(".slide");
+let current=0;
+
+function changeSlide(){
+
+slides[current].classList.remove("active");
+
+current=(current+1)%slides.length;
+
+slides[current].classList.add("active");
+}
+
+setInterval(changeSlide,3000);
+</script>
+
+</body>
+</html>
